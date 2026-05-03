@@ -10,8 +10,7 @@ export default function Hero() {
           building thoughtful, real-world software
         </p>
         <div className="hero-cta">
-          <a href="#projects" className="btn btn-primary">View Work</a>
-          <a href="#contact" className="btn btn-ghost">Get In Touch</a>
+          <a href="#contact" className="btn btn-primary">Get In Touch</a>
         </div>
       </div>
       <div className="hero-right">
