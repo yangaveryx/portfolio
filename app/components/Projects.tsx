@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Project = {
   idx: string;
   year: string;
@@ -7,27 +9,38 @@ type Project = {
   tags: string[];
   live?: string;
   github?: string;
+  image?: string;
 };
 
 const projects: Project[] = [
   {
     idx: "i",
     year: "2026",
-    status: "In progress",
-    title: "Fried!",     
-    desc: "A single-player cooking game inspired by Overcooked, where players complete timed donut orders by navigating a map, assembling ingredients, and managing order accuracy under pressure.",
-    tags: ["OCaml"],
-    github: "https://github.coecis.cornell.edu/ajz48/cooked",
+    status: "Deployed · September",
+    title: "Readability Lab",
+    desc: "A full-stack tool that rewrites text toward a selected reading level and visualizes changes in readability and syntactic complexity. Built a LangChain verify-and-revise pipeline that evaluates each rewrite and returns the closest result within three iterations. Representative tests shifted reading grade levels from 15.7 to 4.5 and from 0.6 to 9.6.",
+    tags: ["React", "Python", "FastAPI", "LangChain", "spaCy", "Gemini", "Vercel", "Render"],
+    github: "https://github.com/yangaveryx/readability-lab",
   },
   {
     idx: "ii",
     year: "2026",
-    status: "Completed",
-    title: "Film Diary (working title)",
-    desc: "A Letterboxd-inspired movie logging platform that allows users to discover films, track what they’ve watched, write reviews, and maintain a personal watchlist. Movie data is fetched from the TMDB API to provide real posters and metadata.",
-    tags: ["TypeScript", "Node.js", "Express.js",  "React", "Firebase"],
-    github: "#",
+    status: "Deployed · Jan–May",
+    title: "Film Diary",
+    desc: "Independently built and deployed a movie discovery and logging app with live TMDB search, movie metadata, posters, and popularity feeds. Built review and watchlist CRUD features with Firebase authentication and per-user persistence, then containerized the app with Docker and hosted it on Vercel.",
+    tags: ["TypeScript", "Node.js", "Express.js",  "React", "Firebase", "Docker", "Vercel"],
+    github: "https://github.com/yangaveryx/film-diary",
+  },
+  {
+    idx: "iii",
+    year: "2026",
+    status: "Completed · Jan–May",
+    title: "Fried! — Donut Shop Simulation",
+    desc: "A single-player cooking game built in a 2,400+ line OCaml MVC codebase. Implemented functional game-state transitions, player interactions, collision detection, and station-specific timers, with unit tests for timing and gameplay logic and a replay feature for debugging.",
+    tags: ["OCaml"],
+    github: "https://github.coecis.cornell.edu/ajz48/cooked",
   }
+
 ];
 
 export default function Projects() {
@@ -48,9 +61,12 @@ export default function Projects() {
                   {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
                 </div>
               </div>
+              <div className="p-figure">
+                {p.image && <Image src={p.image} alt={`${p.title} gameplay screenshot`} width={400} height={300} style={{ height: "auto" }} />}
+              </div>
               <div className="p-links">
-                {p.live && <a href={p.live} className="pl">↗ Live</a>}
-                {p.github && <a href={p.github} className="pl dim">GitHub</a>}
+                {p.live && <a href={p.live} target="_blank" rel="noreferrer" className="pl">↗ Live</a>}
+                {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="pl dim">GitHub</a>}
               </div>
             </div>
           ))}

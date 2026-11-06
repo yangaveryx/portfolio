@@ -1,42 +1,28 @@
 type Skill = { name: string };
 
 const frontend: Skill[] = [
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "JavaScript/TypeScript" },
-  { name: "HTML" },
+  { name: "React" }, { name: "JavaScript / TypeScript" }, { name: "HTML / CSS" },
 ];
-
 const backend: Skill[] = [
-  { name: "Node.js" },
-  { name: "Express.js" },
-  { name: "Prisma" },
-  { name: "Firebase" },
+  { name: "Node.js / Express.js" }, { name: "FastAPI" }, { name: "PostgreSQL / SQL" },
+  { name: "Prisma / Firebase" },
 ];
-
 const languages: Skill[] = [
-  { name: "Java" },
-  { name: "Python" },
-  { name: "C" },
-  { name: "C++" },
-  { name: "OCaml" },
+  { name: "Python / Java" }, { name: "C / C++ / OCaml" }, { name: "Linux / Bash" },
 ];
-
+const machineLearning: Skill[] = [
+  { name: "PyTorch / scikit-learn" }, { name: "LangChain / spaCy" }, { name: "pandas / NumPy" },
+];
 const tools: Skill[] = [
-  { name: "GitHub" },
-  { name: "Docker" },
-  { name: "Figma" },
+  { name: "Git / GitHub" }, { name: "Docker" }, { name: "Vercel / Render" },
+  { name: "Postman / Figma" },
 ];
 
 function SkillRow({ skill }: { skill: Skill }) {
   return (
     <div className="sk">
       {skill.name}
-      <div className="dots">
-        {[1,2,3,4,5].map((i) => (
-          <div key={i} className={`d${i <= 5 ? " on" : ""}`} />
-        ))}
-      </div>
+
     </div>
   );
 }
@@ -61,6 +47,7 @@ export default function Skills() {
           <SkillGroup label="Frontend" skills={frontend} />
           <SkillGroup label="Backend"  skills={backend} />
           <SkillGroup label="Languages" skills={languages} />
+          <SkillGroup label="Machine Learning & NLP" skills={machineLearning} />
           <SkillGroup label="Tools"    skills={tools} />
         </div>
       </div>

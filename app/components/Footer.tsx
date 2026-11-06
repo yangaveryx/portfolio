@@ -6,7 +6,7 @@ export default function Footer() {
       <div style={{ display: "flex", gap: "28px" }}>
         <a href="https://github.com/yangaveryx" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/avery-s-yang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:yang.averyx@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        <a href="mailto:asy28@cornell.edu" target="_blank" rel="noopener noreferrer">Email</a>
       </div>
     </footer>
   );

@@ -8,25 +8,25 @@ type Job = {
 
 const jobs: Job[] = [
   {
-    dates: "Nov 2025 — Present",
-    role: "Product Developer",
-    org: "Hack4Impact at Cornell",
-    desc: "Developed a user-facing volunteer management system for Anabel's Grocery as part of a student engineering team. Implemented backend APIs and user authentication, and contributed to frontend development and system design. \n Tech stack: React, Next.js, Express.js, Prisma, TypeScript, Docker, Git, Figma.",
-    badge: "Organization",
-  },
-  {
-    dates: "June 2025 — Aug 2025",
-    role: "AI Product Research Intern",
-    org: "Cricket Media",
-    desc: "Researched and designed AI-powered features for an educational platform serving international students, including chat-based tutoring, AI-assisted grading, and adaptive learning tools. Conducted competitive analysis of edtech products and created low-fidelity prototypes in Figma to explore integration of AI-driven learning experiences.",
-    badge: "Internship",
-  },
-  {
-    dates: "June 2024 — Aug 2024",
-    role: "Clinical Psychology Research Scholar",
-    org: "Pioneer Academics",
-    desc: "Conducted independent research on inter-identity amnesia and memory transfer in individuals with dissociative identity disorder under Professor Allan Clifton (Vassar College). Designed an EEG-based word recognition experiment measuring P300 amplitudes to study memory retrieval across dissociative states.",
+    dates: "May 2026 — Present",
+    role: "Research Assistant",
+    org: "Computational Linguistics Lab · Cornell University",
+    desc: "Developing an ASL sign recognition system with React, PyTorch, and FastAPI to help learners identify partially remembered signs from live video. Implementing MediaPipe landmark extraction with motion-threshold filtering and farthest-point sampling, and training models on approximately 85,000 videos from ASL-LEX and SEM-LEX. Designed and deployed REST APIs on a Cornell Apache server to process video and serve recognition results.",
     badge: "Research",
+  },
+  {
+    dates: "Nov 2025 — Present",
+    role: "Software Developer",
+    org: "Hack4Impact · Cornell University",
+    desc: "Medic — Community Health Toolkit Impact Dashboard\nBuilding TypeScript, Express, and PostgreSQL endpoints for monitoring CHT deployments across 24 countries and 180,000+ health workers. Linking monitoring snapshots with deployment records while preserving measurement windows and data-quality indicators; implementing sharing controls and API tests for restricted deployments, stale snapshots, and failed metrics.\n\nAnabel’s Grocery — Volunteer Shift Management\nShipped 10+ REST API endpoints for shifts and swap requests, supporting 50+ volunteers. Integrated Firebase Admin SDK token verification for secure volunteer and admin authentication.",
+    badge: "Community Impact",
+  },
+  {
+    dates: "July 2025 — Aug 2025",
+    role: "AI Product Research Intern",
+    org: "NeuPals Holdings — Cricket Media",
+    desc: "Conducted competitive market analysis and prototyped AI feature concepts in Figma for an educational technology platform serving international students.",
+    badge: "Internship",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Experience() {
         </div>
         <div className="exp-layout reveal">
           <div>
-            <p className="exp-col-title">Work</p>
+            <p className="exp-col-title">Research & Development</p>
             <div className="exp-items">
               {jobs.map((job, i) => (
                 <div className="exp-item" key={i}>

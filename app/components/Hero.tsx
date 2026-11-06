@@ -5,12 +5,13 @@ export default function Hero() {
         <p className="hero-kicker">Full-Stack Developer</p>
         <h1>AVERY<br />YANG</h1>
         <div className="hero-line" />
-        <p className="hero-tagline">developer</p>
+        <p className="hero-tagline">software, language & learning</p>
         <p className="hero-desc">
-          building thoughtful, real-world software
+          Computer Science & Cognitive Science at Cornell. Building full-stack applications and tools that support language, learning, and real-world communities.
         </p>
         <div className="hero-cta">
-          <a href="#contact" className="btn btn-primary">Get In Touch</a>
+          <a href="#projects" className="btn btn-primary">Explore My Work</a>
+          <a href="/Avery_Yang_Resume.pdf" className="btn btn-ghost" target="_blank" rel="noreferrer">View Resume</a>
         </div>
       </div>
       <div className="hero-right">

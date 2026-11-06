@@ -2,13 +2,15 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [opened, setOpened] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setSent(false), 4000);
+    const data = new FormData(e.currentTarget);
+    const subject = encodeURIComponent(`Portfolio inquiry from ${data.get("name")}`);
+    const body = encodeURIComponent(`${data.get("msg")}\n\nFrom: ${data.get("name")} <${data.get("email")}>`);
+    window.location.href = `mailto:asy28@cornell.edu?subject=${subject}&body=${body}`;
+    setOpened(true);
   }
 
   return (
@@ -22,8 +24,8 @@ export default function Contact() {
             research roles, or just a good conversation about tech.
           </p>
           <div className="c-links">
-            <a href="mailto:yang.averyx@gmail.com" className="clink">
-              <span className="ci">@</span> yang.averyx@gmail.com
+            <a href="mailto:asy28@cornell.edu" className="clink">
+              <span className="ci">@</span> asy28@cornell.edu
             </a>
             <a href="https://github.com/yangaveryx" target="_blank" rel="noreferrer" className="clink">
               <span className="ci">GH</span> github.com/yangaveryx
@@ -31,27 +33,28 @@ export default function Contact() {
             <a href="https://www.linkedin.com/in/avery-s-yang" target="_blank" rel="noreferrer" className="clink">
               <span className="ci">in</span> linkedin.com/in/avery-s-yang
             </a>
-            <a href="Resume" target="_blank" rel="noreferrer" className="clink">
-              <span className="ci">in</span> my resume
+            <a href="/Avery_Yang_Resume.pdf" target="_blank" rel="noreferrer" className="clink">
+              <span className="ci">PDF</span> View my resume
             </a>
           </div>
         </div>
         <div className="contact-light reveal">
+          <p className="contact-note">This form opens your email app with a draft. Send it there to get in touch.</p>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="field">
               <label htmlFor="name">Name</label>
-              <input id="name" type="text" placeholder="Your name" required />
+              <input id="name" name="name" type="text" placeholder="Your name" required />
             </div>
             <div className="field">
               <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="your@email.com" required />
+              <input id="email" name="email" type="email" placeholder="your@email.com" required />
             </div>
             <div className="field">
               <label htmlFor="msg">Message</label>
-              <textarea id="msg" placeholder="Send me a message!" required />
+              <textarea id="msg" name="msg" placeholder="Send me a message!" required />
             </div>
             <button type="submit" className="btn btn-primary btn-full">
-              {sent ? "Sent ✓" : "Send Message"}
+              {opened ? "Open Email Again" : "Compose Email"}
             </button>
           </form>
         </div>

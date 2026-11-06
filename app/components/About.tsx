@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -9,8 +9,8 @@ export default function About() {
             <p className="about-label">Who I Am</p>
             <p className="about-name">Avery Yang</p>
             <Image
-              src="/headshot.jpg"
-              alt="Headshot"
+              src="/headshot.JPG"
+              alt="Avery Yang"
               width={440}
               height={480}
               className="about-headshot"
@@ -19,10 +19,15 @@ export default function About() {
           <div className="about-right">
             <div className="about-bio">
               <p>
-                Hi, I&apos;m Avery Yang. I&apos;m a full-stack developer who enjoys building thoughtful, well-designed software. I work across the stack and focus on tackling problems that have real-world impact.
+                Hi! I&apos;m Avery, and I study Computer Science and Cognitive
+                Science at Cornell. I&apos;m interested in how people learn and
+                use language, and how AI can make both more accessible.
               </p>
               <p>
-                I&apos;m especially interested in how technology intersects with psychology, particularly how software can support learning and cognition. Outside of coding, I spend my time dancing, reading, and playing with my cat.
+                My work spans machine learning for ASL sign recognition at
+                Cornell&apos;s Computational Linguistics Lab and full-stack
+                tools rooted in social impact with Hack4Impact. Outside of
+                coding, I enjoy dancing, reading, and spending time with my cat.
               </p>
             </div>
             <div className="about-facts">
@@ -32,15 +37,23 @@ export default function About() {
               </div>
               <div className="fact">
                 <p className="fact-label">Available For</p>
-                <p className="fact-value">Internships & full-time opportunities</p>
+                <p className="fact-value">
+                  Internships & full-time opportunities
+                </p>
               </div>
               <div className="fact">
                 <p className="fact-label">Education</p>
-                <p className="fact-value">B.A. in Computer Science & Cognitive Science at Cornell University</p>
+                <p className="fact-value">
+                  Cornell University · B.A. in Computer Science & Cognitive
+                  Science · Expected May 2028
+                </p>
               </div>
               <div className="fact">
                 <p className="fact-label">Interests</p>
-                <p className="fact-value">Human-Computer Interaction, Artificial Intelligence, Learning and Cognition, Computational Modeling</p>
+                <p className="fact-value">
+                  Human-Computer Interaction, Artificial Intelligence, Learning
+                  and Cognition, Computational Modeling
+                </p>
               </div>
             </div>
           </div>
