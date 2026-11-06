@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type Project = {
   idx: string;
   year: string;
@@ -9,7 +7,6 @@ type Project = {
   tags: string[];
   live?: string;
   github?: string;
-  image?: string;
 };
 
 const projects: Project[] = [
@@ -50,7 +47,7 @@ export default function Projects() {
         <div className="section-header reveal">
           <h2>Projects</h2>
         </div>
-        <div className="projects-list reveal">
+        <div className="projects-list">
           {projects.map((p) => (
             <div className="p-row" key={p.idx}>
               <span className="p-idx">{p.idx}. {p.year}.<span className="p-status">{p.status}</span></span>
@@ -60,9 +57,6 @@ export default function Projects() {
                 <div className="p-tags">
                   {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
                 </div>
-              </div>
-              <div className="p-figure">
-                {p.image && <Image src={p.image} alt={`${p.title} gameplay screenshot`} width={400} height={300} style={{ height: "auto" }} />}
               </div>
               <div className="p-links">
                 {p.live && <a href={p.live} target="_blank" rel="noreferrer" className="pl">↗ Live</a>}

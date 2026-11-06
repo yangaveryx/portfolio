@@ -3,12 +3,14 @@ import { useEffect } from "react";
 
 export default function RevealObserver() {
   useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
+    const els = document.querySelectorAll(".reveal, .p-row, .exp-item, .skills-layout > div");
+    els.forEach((el) => el.classList.add("reveal"));
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e, i) => {
+        entries.forEach((e) => {
           if (e.isIntersecting) {
-            setTimeout(() => e.target.classList.add("visible"), i * 100);
+            e.target.classList.add("visible");
+            io.unobserve(e.target);
           }
         });
       },
